@@ -35,7 +35,7 @@ jobs:
           echo "python path: $(which python)"
           echo "install libffi7"
           wget http://ftp.ubuntu.com/ubuntu/ubuntu/pool/universe/libf/libffi7/libffi7_3.3-5ubuntu1_amd64.deb
-          sudo dpkg -i libffi7_3.3-5ubuntu1_amd64.deb -y
+          sudo dpkg -i libffi7_3.3-5ubuntu1_amd64.deb
 
           cd .github/workflows
           chmod +x ./llvm.sh
