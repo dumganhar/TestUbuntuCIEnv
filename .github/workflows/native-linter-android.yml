@@ -21,11 +21,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # - uses: actions/setup-python@v5
-      #   with:
-      #     python-version: '3.8' 
-
-      - name: Install CMake & Clang Tidy
+      - name: Install Python3.8
         run: |
           sudo add-apt-repository ppa:deadsnakes/ppa
           sudo apt update
@@ -33,13 +29,21 @@ jobs:
           sudo apt install python3.8
           echo "python version: $(python --version)"
           echo "python path: $(which python)"
+
+      - name: Install libffi7
+        run: |
           echo "install libffi7"
           wget http://ftp.ubuntu.com/ubuntu/ubuntu/pool/universe/libf/libffi7/libffi7_3.3-5ubuntu1_amd64.deb
           sudo dpkg -i libffi7_3.3-5ubuntu1_amd64.deb
 
+      - name: Install CMake & Clang Tidy
+        run: |
           cd .github/workflows
           chmod +x ./llvm.sh
           sudo ./llvm.sh 11
           sudo apt update --fix-missing
           sudo apt install -y clang-tidy-11
+
+          clang-tidy-11 --version
+          clang-tidy-11 --help
 
