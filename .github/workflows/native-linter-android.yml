@@ -22,9 +22,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Install CMake & Clang Tidy
         run: |
+          echo "python version: $(python --version)"
           sudo apt update
-          sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8
-          sudo update-alternatives --config python
+
+
 
           cd .github/workflows
           chmod +x ./llvm.sh
