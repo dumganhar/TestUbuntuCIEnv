@@ -29,7 +29,7 @@ jobs:
         run: |
           sudo add-apt-repository ppa:deadsnakes/ppa
           sudo apt update
-          sudo apt uninstall python
+          sudo apt remove python
           sudo apt install python3.8
           echo "python version: $(python --version)"
           echo "python path: $(which python)"
