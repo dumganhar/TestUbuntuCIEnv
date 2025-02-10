@@ -24,7 +24,7 @@ jobs:
         run: |
           wget https://apt.llvm.org/llvm.sh
           chmod +x llvm.sh
-          sudo ./llvm.sh 11
+          sudo ./llvm.sh all
           sudo apt update --fix-missing
           sudo apt install -y clang-tidy-11
 
