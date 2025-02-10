@@ -23,6 +23,7 @@ jobs:
       - name: Install CMake & Clang Tidy
         run: |
           sudo apt update
+          sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8
           sudo update-alternatives --config python
 
           cd .github/workflows
