@@ -27,14 +27,15 @@ jobs:
 
       - name: Install CMake & Clang Tidy
         run: |
-          sudo echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main universe" >> /etc/apt/sources.list
           sudo add-apt-repository ppa:deadsnakes/ppa
           sudo apt update
           sudo apt remove python
           sudo apt install python3.8
           echo "python version: $(python --version)"
           echo "python path: $(which python)"
-          sudo apt install libffi7
+          echo "install libffi7"
+          wget http://ftp.ubuntu.com/ubuntu/ubuntu/pool/universe/libf/libffi7/libffi7_3.3-5ubuntu1_amd64.deb
+          sudo dpkg -i libffi7_3.3-5ubuntu1_amd64.deb -y
 
           cd .github/workflows
           chmod +x ./llvm.sh
