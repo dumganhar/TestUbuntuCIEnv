@@ -21,12 +21,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.8' 
+      # - uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.8' 
 
       - name: Install CMake & Clang Tidy
         run: |
+          sudo add-apt-repository ppa:deadsnakes/ppa
+          sudo apt update
+          sudo apt uninstall python
+          sudo apt install python3.8
           echo "python version: $(python --version)"
           echo "python path: $(which python)"
           sudo apt install libpython3-dev
