@@ -27,10 +27,10 @@ jobs:
 
       - name: Install CMake & Clang Tidy
         run: |
-          sudo apt-cache policy libpython3
           echo "python version: $(python --version)"
           echo "python path: $(which python)"
-          sudo apt install python3-dev
+          sudo apt install libpython3-dev
+          echo "After install libpython3-dev"
 
 
           cd .github/workflows
