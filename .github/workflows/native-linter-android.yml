@@ -27,6 +27,7 @@ jobs:
 
       - name: Install CMake & Clang Tidy
         run: |
+          sudo echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main universe" >> /etc/apt/sources.list
           sudo add-apt-repository ppa:deadsnakes/ppa
           sudo apt update
           sudo apt remove python
