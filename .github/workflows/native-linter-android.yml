@@ -23,5 +23,5 @@ jobs:
       - name: Install CMake & Clang Tidy
         run: |
           sudo apt update --fix-missing
-          sudo apt install -y cmake llvm clang-tidy ninja-build
+          sudo apt install -y cmake llvm clang-tidy-11 ninja-build
 
