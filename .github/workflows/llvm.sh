@@ -47,7 +47,7 @@ UBUNTU_CODENAME=""
 CODENAME_FROM_ARGUMENTS=""
 # Obtain VERSION_CODENAME and UBUNTU_CODENAME (for Ubuntu and its derivatives)
 source /etc/os-release
-UBUNTU_CODENAME="jammy"
+UBUNTU_CODENAME="focal"
 DISTRO=${DISTRO,,}
 case ${DISTRO} in
     debian)
